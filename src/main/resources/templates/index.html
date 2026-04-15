@@ -1,21 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <title>Accueil</title>
-</head>
-<body>
+  <body>
+    <!-- HEADER -->
+    <div th:replace="fragments/header :: header"></div>
 
-<header>
-    <h1>🥖 Boulangerie</h1>
-    <nav>
-        <a href="/">Accueil</a>
-        <a href="/produits">Produits</a>
-        <a href="/contact">Contact</a>
-    </nav>
-</header>
+    <h2>Accueil</h2>
+    <p>Bienvenue 👋</p>
 
-<h2>Bienvenue</h2>
-<p>Accueil du site</p>
-
-</body>
+    <!-- FOOTER -->
+    <div th:replace="fragments/footer :: footer"></div>
+  </body>
 </html>

@@ -1,5 +1,11 @@
-    <h2>Nos produits</h2>
-    <ul>
-        <li>Baguette</li>
-        <li>Croissant</li>
-    </ul>
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <body>
+    <div th:replace="fragments/header :: header"></div>
+
+    <h2>Produits</h2>
+    <p>Baguettes, croissants...</p>
+
+    <div th:replace="fragments/footer :: footer"></div>
+  </body>
+</html>

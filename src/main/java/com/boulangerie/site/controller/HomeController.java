@@ -1,12 +1,13 @@
 package com.boulangerie.site.controller;
 
-import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.*;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.ui.Model;
 
 @Controller
 public class HomeController {
 
-   @GetMapping("/")
+    @GetMapping("/")
     public String home() {
         return "index";
     }

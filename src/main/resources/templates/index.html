@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Boulangerie</title>
-</head>
+<html xmlns:th="http://www.thymeleaf.org">
+
 <body>
-    <h1>🥖 Bienvenue à la boulangerie</h1>
-    <p>Site en construction</p>
+
+<div th:replace="layout/base :: content">
+
+    <h2>Bienvenue</h2>
+    <p>Accueil du site</p>
+
+</div>
+
 </body>
 </html>

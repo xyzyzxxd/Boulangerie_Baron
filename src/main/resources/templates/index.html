@@ -2,34 +2,31 @@
 <html xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Business Casual - Start Bootstrap Theme</title>
+    <title>Boulangerie Baron</title>
 
     <link rel="icon" type="image/x-icon" th:href="@{/assets/favicon.ico}" />
 
-    <!-- Google fonts-->
+    <!-- Google fonts -->
     <link
-      href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+      href="https://fonts.googleapis.com/css?family=Raleway"
       rel="stylesheet"
     />
     <link
-      href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i"
+      href="https://fonts.googleapis.com/css?family=Lora"
       rel="stylesheet"
     />
 
-    <!-- Core theme CSS -->
+    <!-- CSS -->
     <link th:href="@{/css/styles.css}" rel="stylesheet" />
   </head>
 
   <body>
-    <!-- HEADER (réutilisable) -->
+    <!-- HEADER -->
     <div th:replace="fragments/header :: header"></div>
 
-    <!-- ===================== CONTENT ===================== -->
+    <!-- ================= ACCUEIL ================= -->
 
     <section class="page-section clearfix">
       <div class="container">
@@ -37,27 +34,35 @@
           <img
             class="intro-img img-fluid mb-3 mb-lg-0 rounded"
             th:src="@{/assets/img/intro.jpg}"
-            alt="..."
+            alt="Boulangerie"
           />
 
           <div class="intro-text left-0 text-center bg-faded p-5 rounded">
             <h2 class="section-heading mb-4">
-              <span class="section-heading-upper">Fresh Coffee</span>
-              <span class="section-heading-lower">Worth Drinking</span>
+              <span class="section-heading-upper"
+                >Pain frais tous les jours</span
+              >
+              <span class="section-heading-lower">Boulangerie Artisanale</span>
             </h2>
 
             <p class="mb-3">
-              Every cup of our quality artisan coffee starts with locally
-              sourced ingredients...
+              Découvrez notre sélection de pains traditionnels, viennoiseries
+              croustillantes et pâtisseries faites maison. Chaque produit est
+              préparé avec des ingrédients de qualité et un savoir-faire
+              artisanal.
             </p>
 
             <div class="intro-button mx-auto">
-              <a class="btn btn-primary btn-xl" href="#!">Visit Us Today!</a>
+              <a class="btn btn-primary btn-xl" href="/products">
+                Voir nos produits
+              </a>
             </div>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- ================= NOS ENGAGEMENTS ================= -->
 
     <section class="page-section cta">
       <div class="container">
@@ -65,13 +70,15 @@
           <div class="col-xl-9 mx-auto">
             <div class="cta-inner bg-faded text-center rounded">
               <h2 class="section-heading mb-4">
-                <span class="section-heading-upper">Our Promise</span>
-                <span class="section-heading-lower">To You</span>
+                <span class="section-heading-upper">Notre engagement</span>
+                <span class="section-heading-lower">Qualité & Tradition</span>
               </h2>
 
               <p class="mb-0">
-                When you walk into our shop, we are dedicated to providing you
-                with friendly service...
+                Nous utilisons des ingrédients locaux et sélectionnés avec soin
+                pour garantir des produits frais et savoureux. Notre équipe vous
+                accueille chaque jour avec le sourire pour vous offrir le
+                meilleur de la boulangerie française.
               </p>
             </div>
           </div>
@@ -79,13 +86,23 @@
       </div>
     </section>
 
-    <!-- ===================== FOOTER ===================== -->
+    <!-- ================= PETIT BONUS (horaires) ================= -->
+
+    <section class="page-section">
+      <div class="container text-center">
+        <h2 class="mb-4">🕒 Horaires</h2>
+
+        <p>Lundi - Vendredi : 7h00 - 19h30</p>
+        <p>Samedi : 7h00 - 18h00</p>
+        <p>Dimanche : 7h00 - 13h00</p>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
     <div th:replace="fragments/footer :: footer"></div>
 
-    <!-- Bootstrap JS -->
+    <!-- JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Core theme JS -->
     <script th:src="@{/js/scripts.js}"></script>
   </body>
 </html>

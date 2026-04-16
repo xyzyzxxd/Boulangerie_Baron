@@ -1,5 +1,48 @@
 <div th:fragment="footer">
-  <footer class="bg-dark text-white text-center p-3 mt-5">
-    © 2026 Boulangerie
+  <!-- Google font (cohérent avec header) -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Great+Vibes&display=swap"
+    rel="stylesheet"
+  />
+
+  <footer
+    style="
+      background-color: #5c3a21;
+      color: #f4e1c1;
+      font-family: &quot;Cinzel&quot;, serif;
+    "
+    class="text-center p-4 mt-5"
+  >
+    <!-- Nom -->
+    <p
+      class="mb-1"
+      style="font-family: &quot;Great Vibes&quot;, cursive; font-size: 1.6rem"
+    >
+      🥖 Boulangerie Baron
+    </p>
+
+    <!-- Adresse -->
+    <p class="mb-1">📍 14 rue Georges Clemenceau, 39160 Saint-Amour, France</p>
+
+    <!-- Contact -->
+    <p class="mb-1">
+      📞
+      <a href="tel:0384487269" style="color: #f4e1c1; text-decoration: none">
+        03 84 48 72 69
+      </a>
+      | ✉
+      <a
+        href="mailto:boulangeriebaron0@gmail.com"
+        style="color: #f4e1c1; text-decoration: none"
+      >
+        boulangeriebaron0@gmail.com
+      </a>
+    </p>
+
+    <!-- ligne -->
+    <hr style="border-color: #f4a261; margin: 15px 0" />
+
+    <!-- copyright -->
+    <small>© 2026 Boulangerie Baron - Tous droits réservés</small>
   </footer>
 </div>

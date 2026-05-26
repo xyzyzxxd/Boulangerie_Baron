@@ -11477,3 +11477,9 @@ p {
   display: block;
   margin: 0 auto;
 }
+
+.product-img {
+  height: 220px;
+  width: 100%;
+  object-fit: cover;
+}

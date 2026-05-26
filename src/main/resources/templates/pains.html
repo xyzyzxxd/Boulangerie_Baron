@@ -8,7 +8,7 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
 
-    <title>Products - Business Casual</title>
+    <title>Nos pains - Business Casual</title>
 
     <link rel="icon" type="image/x-icon" th:href="@{/assets/favicon.ico}" />
 
@@ -23,111 +23,263 @@
       rel="stylesheet"
     />
 
-    <!-- Core theme CSS -->
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
     <link th:href="@{/css/styles.css}" rel="stylesheet" />
+
+    <style>
+      body {
+        background-color: #faf7f2;
+      }
+
+      .section-heading-lower {
+        font-weight: 700;
+        letter-spacing: 1px;
+      }
+
+      .product-card {
+        border-radius: 14px;
+        overflow: hidden;
+        transition: all 0.25s ease;
+        background: #fff;
+      }
+
+      .product-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12) !important;
+      }
+
+      .product-img {
+        height: 200px;
+        width: 100%;
+        object-fit: cover;
+      }
+      .row {
+        justify-content: center;
+      }
+
+      .card-body {
+        padding: 1.2rem;
+      }
+
+      .card-title {
+        font-weight: 600;
+        font-size: 1.1rem;
+        color: #3b2f2f;
+      }
+
+      .card-text {
+        font-size: 0.9rem;
+        color: #6b5b4f;
+        line-height: 1.4;
+      }
+
+      /* titre page plus propre */
+      .page-section h1 {
+        margin-top: 2rem;
+      }
+
+      .section-heading-upper {
+        font-size: 0.9rem;
+        color: #a66a3f;
+        letter-spacing: 1px;
+      }
+    </style>
   </head>
 
   <body>
     <!-- HEADER -->
     <div th:replace="fragments/header :: header"></div>
 
-    <!-- ================= PRODUCT 1 ================= -->
-    <section class="page-section">
-      <div class="container">
-        <div class="product-item">
-          <div class="product-item-title d-flex">
-            <div class="bg-faded p-5 d-flex ms-auto rounded">
-              <h2 class="section-heading mb-0">
-                <span class="section-heading-upper"> Farine de seigle </span>
-
-                <span class="section-heading-lower">
-                  Villageois, Rustiques et Gros Pain
-                </span>
-              </h2>
-            </div>
+    <!-- TITRE -->
+    <section class="page-section clearfix">
+      <div class="container text-center">
+        <div
+          style="
+            display: inline-block;
+            background-color: #fff7ec;
+            padding: 50px 80px;
+            border-radius: 18px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+            max-width: 90%;
+          "
+        >
+          <div
+            style="
+              font-size: 1.3rem;
+              letter-spacing: 3px;
+              color: #a66a3f;
+              text-transform: uppercase;
+              margin-bottom: 15px;
+            "
+          >
+            Boulangerie artisanale
           </div>
 
-          <img
-            class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0"
-            th:src="@{/assets/img/pains1.jpg}"
-            alt="Pain de seigle"
-          />
-
-          <div class="product-item-description d-flex me-auto">
-            <div class="bg-faded p-5 rounded">
-              <p class="mb-0">
-                Pain frais fait maison tous les jours avec des ingrédients de
-                qualité.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= PRODUCT 2 ================= -->
-    <section class="page-section">
-      <div class="container">
-        <div class="product-item">
-          <div class="product-item-title d-flex">
-            <div class="bg-faded p-5 d-flex me-auto rounded">
-              <h2 class="section-heading mb-0">
-                <span class="section-heading-upper"> Farine de blé </span>
-
-                <span class="section-heading-lower">
-                  Couronnes, Marguerites et Boules
-                </span>
-              </h2>
-            </div>
-          </div>
-
-          <img
-            class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0"
-            th:src="@{/assets/img/pains2.jpg}"
-            alt="Pain de blé"
-          />
-
-          <div class="product-item-description d-flex ms-auto">
-            <div class="bg-faded p-5 rounded">
-              <p class="mb-0">
-                Une sélection de pains artisanaux préparés quotidiennement pour
-                accompagner tous vos repas.
-              </p>
-            </div>
+          <div
+            style="
+              font-size: 3.2rem;
+              font-weight: 800;
+              color: #3b2f2f;
+              line-height: 1.1;
+            "
+          >
+            Nos pains
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ================= PRODUCT 3 ================= -->
+    <!-- PRODUITS -->
     <section class="page-section">
-      <div class="container">
-        <div class="product-item">
-          <div class="product-item-title d-flex">
-            <div class="bg-faded p-5 d-flex ms-auto rounded">
-              <h2 class="section-heading mb-0">
-                <span class="section-heading-upper"> Pains classiques </span>
+      <div class="container py-4">
+        <div class="row g-4">
+          <!-- Produit 1 -->
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="card product-card h-100 shadow-sm border-0">
+              <img
+                th:src="@{/assets/img/pains/pains.jpg}"
+                class="card-img-top product-img"
+                alt="Pain de seigle"
+              />
 
-                <span class="section-heading-lower">
-                  Baguettes, Flûtes, Moulées, Épis, Ficelles, Pain aux céréales,
-                  Pain complet
-                </span>
-              </h2>
+              <div class="card-body text-center">
+                <h5 class="card-title">Pain de seigle</h5>
+
+                <p class="card-text">Pain rustique à la farine de seigle.</p>
+              </div>
             </div>
           </div>
 
-          <img
-            class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0"
-            th:src="@{/assets/img/pains3.jpg}"
-            alt="Pains classiques"
-          />
+          <!-- Produit 2 -->
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="card product-card h-100 shadow-sm border-0">
+              <img
+                th:src="@{/assets/img/pains/pains2.jpg}"
+                class="card-img-top product-img"
+                alt="Pain de blé"
+              />
 
-          <div class="product-item-description d-flex me-auto">
-            <div class="bg-faded p-5 rounded">
-              <p class="mb-0">
-                Des pains traditionnels cuits chaque jour pour garantir
-                fraîcheur, goût et authenticité.
-              </p>
+              <div class="card-body text-center">
+                <h5 class="card-title">Pain de blé</h5>
+
+                <p class="card-text">
+                  Pain artisanal moelleux et croustillant.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Produit 3 -->
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="card product-card h-100 shadow-sm border-0">
+              <img
+                th:src="@{/assets/img/pains/pains3.jpg}"
+                class="card-img-top product-img"
+                alt="Baguette"
+              />
+
+              <div class="card-body text-center">
+                <h5 class="card-title">Baguette</h5>
+
+                <p class="card-text">
+                  Baguette traditionnelle cuite chaque matin.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Produit 4 -->
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="card product-card h-100 shadow-sm border-0">
+              <img
+                th:src="@{/assets/img/pains/pain1.jpg}"
+                class="card-img-top product-img"
+                alt="Pain complet"
+              />
+
+              <div class="card-body text-center">
+                <h5 class="card-title">Pain complet</h5>
+
+                <p class="card-text">Pain riche en fibres et en goût.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Produit 5 -->
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="card product-card h-100 shadow-sm border-0">
+              <img
+                th:src="@{/assets/img/pains/pain2.jpg}"
+                class="card-img-top product-img"
+                alt="Pain aux céréales"
+              />
+
+              <div class="card-body text-center">
+                <h5 class="card-title">Pain aux céréales</h5>
+
+                <p class="card-text">
+                  Mélange gourmand de graines et céréales.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Produit 6 -->
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="card product-card h-100 shadow-sm border-0">
+              <img
+                th:src="@{/assets/img/pains/pain3.jpg}"
+                class="card-img-top product-img"
+                alt="Flûte"
+              />
+
+              <div class="card-body text-center">
+                <h5 class="card-title">Flûte</h5>
+
+                <p class="card-text">
+                  Pain fin et croustillant idéal au quotidien.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Produit 7 -->
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="card product-card h-100 shadow-sm border-0">
+              <img
+                th:src="@{/assets/img/pains/pain4.jpg}"
+                class="card-img-top product-img"
+                alt="Pain épi"
+              />
+
+              <div class="card-body text-center">
+                <h5 class="card-title">Pain épi</h5>
+
+                <p class="card-text">Pain original à partager en famille.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Produit 8 -->
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="card product-card h-100 shadow-sm border-0">
+              <img
+                th:src="@{/assets/img/pains/pain5.jpg}"
+                class="card-img-top product-img"
+                alt="Ficelle"
+              />
+
+              <div class="card-body text-center">
+                <h5 class="card-title">Ficelle</h5>
+
+                <p class="card-text">Pain léger et très croustillant.</p>
+              </div>
             </div>
           </div>
         </div>

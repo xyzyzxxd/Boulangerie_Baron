@@ -20,6 +20,67 @@
 
     <!-- CSS -->
     <link th:href="@{/css/styles.css}" rel="stylesheet" />
+
+    <!-- mini amélioration visuelle -->
+    <style>
+      body {
+        background-color: #faf7f2;
+      }
+
+      .page-section {
+        padding: 4rem 0;
+      }
+
+      .intro-img {
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        transition: 0.3s;
+      }
+
+      .intro-img:hover {
+        transform: scale(1.01);
+      }
+
+      .intro-text {
+        background-color: rgba(255, 248, 235, 0.95) !important;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      }
+
+      .cta-inner {
+        background-color: #fff7ec !important;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      }
+
+      h2.section-heading {
+        font-family: "Lora", serif;
+      }
+
+      .section-heading-upper {
+        font-size: 1rem;
+        letter-spacing: 1px;
+        color: #a66a3f;
+      }
+
+      .section-heading-lower {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #3b2f2f;
+      }
+
+      .page-section p {
+        font-family: "Raleway", sans-serif;
+        color: #4a3b2f;
+        line-height: 1.6;
+      }
+
+      /* effet léger sur les blocs */
+      .bg-faded {
+        transition: 0.3s;
+      }
+
+      .bg-faded:hover {
+        transform: translateY(-3px);
+      }
+    </style>
   </head>
 
   <body>
@@ -39,10 +100,12 @@
 
           <div class="intro-text left-0 text-center bg-faded p-5 rounded">
             <h2 class="section-heading mb-4">
-              <span class="section-heading-upper"
-                >Pain frais tous les jours</span
-              >
-              <span class="section-heading-lower">Boulangerie Artisanale</span>
+              <span class="section-heading-upper">
+                Pain frais tous les jours
+              </span>
+              <span class="section-heading-lower">
+                Boulangerie Artisanale
+              </span>
             </h2>
 
             <p class="mb-3">
@@ -56,16 +119,16 @@
       </div>
     </section>
 
-    <!-- ================= NOS ENGAGEMENTS ================= -->
+    <!-- ================= ENGAGEMENT ================= -->
 
     <section class="page-section cta">
       <div class="container">
         <div class="row">
           <div class="col-xl-9 mx-auto">
-            <div class="cta-inner bg-faded text-center rounded">
+            <div class="cta-inner bg-faded text-center rounded p-5">
               <h2 class="section-heading mb-4">
                 <span class="section-heading-upper">Notre engagement</span>
-                <span class="section-heading-lower">Qualité & Tradition</span>
+                <span class="section-heading-lower"> Qualité & Tradition </span>
               </h2>
 
               <p class="mb-0">
@@ -84,11 +147,17 @@
 
     <section class="page-section">
       <div class="container text-center">
-        <h2 class="mb-4">🕒 Horaires</h2>
+        <div class="bg-faded rounded p-4 shadow-sm d-inline-block">
+          <h2 class="mb-3">🕒 Horaires</h2>
 
-        <p>Lundi - Vendredi : 7h00 - 19h30</p>
-        <p>Samedi : 7h00 - 18h00</p>
-        <p>Dimanche : 7h00 - 13h00</p>
+          <div class="mb-2">
+            <strong>Lundi - Vendredi :</strong> 7h00 - 19h30
+          </div>
+
+          <div class="mb-2"><strong>Samedi :</strong> 7h00 - 18h00</div>
+
+          <div><strong>Dimanche :</strong> 7h00 - 13h00</div>
+        </div>
       </div>
     </section>
 

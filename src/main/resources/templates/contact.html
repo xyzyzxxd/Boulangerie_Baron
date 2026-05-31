@@ -141,15 +141,14 @@
           <div class="col-md-7">
             <div class="contact-card">
 
-              <form method="post" th:action="@{/contact}">
+              <form action="https://formspree.io/f/xjgzdjbb" method="POST">
+              <input type="text" name="name" placeholder="Nom" required />
 
-                <input type="text" name="name" placeholder="Votre nom" required />
+              <input type="email" name="email" placeholder="Email" required />
 
-                <input type="email" name="email" placeholder="Votre email" required />
+<textarea name="message" placeholder="Message" required></textarea>
 
-                <textarea name="message" rows="5" placeholder="Votre message..." required></textarea>
-
-                <button type="submit">Envoyer le message</button>
+<button type="submit">Envoyer</button>
               </form>
 
             </div>
@@ -161,19 +160,19 @@
 
               <div class="info-title">📍 Adresse</div>
               <div class="info-text">
-                12 Rue de la Boulangerie<br />
-                28000 Chartres
+                14 rue Georges Clemenceau<br />
+                39160 Saint-Amour
               </div>
 
               <div class="info-title">📞 Téléphone</div>
               <div class="info-text">
-                01 23 45 67 89
+                03 84 48 72 69
               </div>
 
               <div class="info-title">⏰ Horaires</div>
               <div class="info-text">
-                Lundi - Samedi : 6h - 19h<br />
-                Dimanche : 6h - 13h
+                Mardi - Samedi : 6h30 - 12h45    14h - 18h45<br />
+                Dimanche : 7h - 12h45
               </div>
 
             </div>

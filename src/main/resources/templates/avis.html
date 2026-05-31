@@ -7,7 +7,7 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
 
-    <title>Contact - Boulangerie artisanale</title>
+    <title>Avis clients - Boulangerie artisanale</title>
 
     <link rel="icon" type="image/x-icon" th:href="@{/assets/favicon.ico}" />
 
@@ -24,16 +24,18 @@
     <link th:href="@{/css/styles.css}" rel="stylesheet" />
 
     <style>
+      /* BACKGROUND */
       body {
         background-color: #faf7f2;
       }
 
+      /* CONTAINER */
       .container-custom {
         max-width: 1100px;
         margin: auto;
       }
 
-      /* TITLE */
+      /* TITRE */
       .title-box {
         background: white;
         padding: 60px;
@@ -64,16 +66,18 @@
         font-size: 1.1rem;
       }
 
-      /* CONTACT CARD */
-      .contact-card {
+      /* FORM */
+      .review-form {
         background: white;
         padding: 30px;
         border-radius: 15px;
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        margin-bottom: 40px;
       }
 
-      .contact-card input,
-      .contact-card textarea {
+      .review-form input,
+      .review-form textarea,
+      .review-form select {
         width: 100%;
         padding: 12px;
         margin-bottom: 15px;
@@ -81,7 +85,7 @@
         border: 1px solid #ddd;
       }
 
-      .contact-card button {
+      .review-form button {
         background-color: #3b2f2f;
         color: white;
         padding: 12px 20px;
@@ -93,28 +97,29 @@
         font-weight: 600;
       }
 
-      .contact-card button:hover {
+      .review-form button:hover {
         background-color: #a66a3f;
       }
 
-      /* INFO BOX */
-      .info-box {
-        background: #fff;
-        padding: 25px;
-        border-radius: 15px;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-        height: 100%;
-      }
-
-      .info-title {
-        font-weight: 700;
-        margin-bottom: 10px;
-        color: #3b2f2f;
-      }
-
-      .info-text {
-        color: #666;
+      /* AVIS */
+      .review-card {
+        background: white;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
         margin-bottom: 15px;
+      }
+
+      .stars {
+        color: #a66a3f;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      .anon {
+        font-size: 0.8rem;
+        color: #888;
+        margin-bottom: 10px;
       }
     </style>
   </head>
@@ -129,57 +134,37 @@
 
         <div class="title-box">
           <span class="title-upper">Boulangerie artisanale</span>
-          <div class="title-main">Contactez-nous</div>
+          <div class="title-main">Vos avis</div>
           <div class="title-sub">
-            Une question, une commande ou une demande spéciale ? Nous vous répondons rapidement.
+            Tous les avis sont anonymes et nous aident à nous améliorer chaque jour.
           </div>
         </div>
 
-        <div class="row g-4">
-
-          <!-- FORMULAIRE -->
-          <div class="col-md-7">
-            <div class="contact-card">
-
-              <form method="post" th:action="@{/contact}">
-
-                <input type="text" name="name" placeholder="Votre nom" required />
-
-                <input type="email" name="email" placeholder="Votre email" required />
-
-                <textarea name="message" rows="5" placeholder="Votre message..." required></textarea>
-
-                <button type="submit">Envoyer le message</button>
-              </form>
-
-            </div>
-          </div>
-
-          <!-- INFOS -->
-          <div class="col-md-5">
-            <div class="info-box">
-
-              <div class="info-title">📍 Adresse</div>
-              <div class="info-text">
-                12 Rue de la Boulangerie<br />
-                28000 Chartres
-              </div>
-
-              <div class="info-title">📞 Téléphone</div>
-              <div class="info-text">
-                01 23 45 67 89
-              </div>
-
-              <div class="info-title">⏰ Horaires</div>
-              <div class="info-text">
-                Lundi - Samedi : 6h - 19h<br />
-                Dimanche : 6h - 13h
-              </div>
-
-            </div>
-          </div>
-
+        <!-- MESSAGE SUCCESS -->
+        <div th:if="${param.success}" style="color: green; text-align:center; margin-bottom: 20px;">
+          ✔ Votre avis a bien été envoyé !
         </div>
+
+        <!-- FORMULAIRE -->
+        <div class="review-form">
+          <form method="post" th:action="@{/avis}">
+
+            <label>Note</label>
+            <select name="note" required>
+              <option value="5">★★★★★ Excellent</option>
+              <option value="4">★★★★☆ Très bien</option>
+              <option value="3">★★★☆☆ Bien</option>
+              <option value="2">★★☆☆☆ Moyen</option>
+              <option value="1">★☆☆☆☆ Déçu</option>
+            </select>
+
+            <label>Votre message</label>
+            <textarea name="message" rows="4" placeholder="Votre avis..." required></textarea>
+
+            <button type="submit">Envoyer anonymement</button>
+          </form>
+        </div>
+
       </div>
     </section>
 

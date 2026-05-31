@@ -29,32 +29,110 @@
       rel="stylesheet"
     />
 
-    <!-- CSS -->
     <link th:href="@{/css/styles.css}" rel="stylesheet" />
 
     <style>
-      .product-card {
-        transition: transform 0.2s ease;
-      }
+      body {
+  background-color: #faf7f2;
+}
 
-      .product-card:hover {
-        transform: translateY(-5px);
-      }
+/* CONTAINER */
+.container.py-4 {
+  max-width: 1400px;
+}
 
-      .product-img {
-        height: 220px;
-        width: 100%;
-        object-fit: cover;
-      }
+/* =========================
+   TITRE
+========================= */
+.title-box {
+  background: white;
+  padding: 60px;
+  border-radius: 20px;
+  max-width: 900px;
+  margin: auto;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
 
-      .card-title {
-        font-weight: bold;
-        font-size: 1.2rem;
-      }
+.title-upper {
+  display: block;
+  color: #a66a3f;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
 
-      .card-text {
-        font-size: 0.95rem;
-      }
+.title-main {
+  font-size: 4rem;
+  font-weight: 800;
+  color: #3b2f2f;
+  margin: 15px 0;
+}
+
+.title-sub {
+  color: #666;
+  font-size: 1.1rem;
+  margin-bottom: 0;
+}
+
+/* =========================
+   CARDS
+========================= */
+.product-card {
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: 100%;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* IMAGE SANS ROGNAGE */
+.product-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* BODY */
+.card-body {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.card-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #3b2f2f;
+}
+
+.card-text {
+  font-size: 0.9rem;
+  color: #6b5b4f;
+  line-height: 1.4;
+}
+
+/* CATÉGORIE */
+.product-category {
+  color: #a66a3f;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+/* GRILLE */
+.row {
+  justify-content: center;
+  row-gap: 25px;
+}
     </style>
   </head>
 
@@ -63,167 +141,159 @@
     <div th:replace="fragments/header :: header"></div>
 
     <!-- TITRE -->
-    <section class="page-section clearfix">
+    <section class="page-section py-5">
       <div class="container text-center">
-        <h1 class="section-heading mb-5">
-          <span class="section-heading-upper"> Pâtisserie artisanale </span>
-
-          <span class="section-heading-lower"> Nos pâtisseries </span>
-        </h1>
+        <div class="title-box">
+          <span class="title-upper">Pâtisserie artisanale</span>
+          <div class="title-main">Nos pâtisseries</div>
+          <p class="title-sub">
+            Découvrez nos viennoiseries et desserts faits maison chaque jour.
+          </p>
+        </div>
       </div>
     </section>
 
     <!-- PRODUITS -->
     <section class="page-section">
-      <div class="container">
-        <div class="row g-4">
-          <!-- Produit 1 -->
-          <div class="col-lg-3 col-md-4 col-sm-6">
+      <div class="container py-4">
+        <div class="row g-4 justify-content-center">
+
+          <!-- 1 -->
+          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
             <div class="card product-card h-100 shadow-sm border-0">
-              <img
-                th:src="@{/assets/img/croissants.jpg}"
-                class="card-img-top product-img"
-                alt="Croissants"
-              />
+
+              <div class="img-wrapper"
+                th:style="|--img:url('@{/assets/img/patisseries/flan.jpg}')|">
+                <img th:src="@{/assets/img/patisseries/flan.jpg}" alt="Flan" />
+              </div>
 
               <div class="card-body text-center">
-                <h5 class="card-title">Croissants</h5>
-
-                <p class="card-text">Croissants croustillants et parfumés.</p>
+                <div class="product-category">Dessert</div>
+                <h5 class="card-title">Flan</h5>
+                <p class="card-text">Flan crémeux et caramélisé.</p>
               </div>
             </div>
           </div>
 
-          <!-- Produit 2 -->
-          <div class="col-lg-3 col-md-4 col-sm-6">
+          <!-- 2 -->
+          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
             <div class="card product-card h-100 shadow-sm border-0">
-              <img
-                th:src="@{/assets/img/pains_chocolat.jpg}"
-                class="card-img-top product-img"
-                alt="Pain au chocolat"
-              />
+
+              <div class="img-wrapper"
+                th:style="|--img:url('@{/assets/img/patisseries/tartelette_citron.jpg}')|">
+                <img th:src="@{/assets/img/patisseries/tartelette_citron.jpg}" alt="Tartelette au citron" />
+              </div>
 
               <div class="card-body text-center">
-                <h5 class="card-title">Pain au chocolat</h5>
-
-                <p class="card-text">
-                  Pain croustillant garni de chocolat.
-                </p>
+                <div class="product-category">Dessert</div>
+                <h5 class="card-title">Tartelette au citron</h5>
+                <p class="card-text">Tartelette aux citrons delicieuse.</p>
               </div>
             </div>
           </div>
 
-          <!-- Produit 3 -->
-          <div class="col-lg-3 col-md-4 col-sm-6">
+          <!-- 3 -->
+          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
             <div class="card product-card h-100 shadow-sm border-0">
-              <img
-                th:src="@{/assets/img/baba_rhum.jpg}"
-                class="card-img-top product-img"
-                alt="Baba au rhum"
-              />
+
+              <div class="img-wrapper"
+                th:style="|--img:url('@{/assets/img/patisseries/baba_rhum.jpg}')|">
+                <img th:src="@{/assets/img/patisseries/baba_rhum.jpg}" alt="Baba au rhum" />
+              </div>
 
               <div class="card-body text-center">
+                <div class="product-category">Dessert</div>
                 <h5 class="card-title">Baba au rhum</h5>
-
-                <p class="card-text">
-                  Pâtisserie moelleuse dans un sirop au rhum.
-                </p>
+                <p class="card-text">Brioche imbibée d’un sirop au rhum.</p>
               </div>
             </div>
           </div>
 
-          <!-- Produit 4 -->
-          <div class="col-lg-3 col-md-4 col-sm-6">
+          <!-- 4 -->
+          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
             <div class="card product-card h-100 shadow-sm border-0">
-              <img
-                th:src="@{/assets/img/brioche_ronde.jpg}"
-                class="card-img-top product-img"
-                alt="Brioche ronde"
-              />
+
+              <div class="img-wrapper"
+                th:style="|--img:url('@{/assets/img/patisseries/tartelette_fraise.jpg}')|">
+                <img th:src="@{/assets/img/patisseries/tartelette_fraise.jpg}" alt="Tartelette à la fraise" />
+              </div>
 
               <div class="card-body text-center">
-                <h5 class="card-title">Brioche ronde</h5>
-
-                <p class="card-text">
-                  Brioche moelleuse en forme ronde.
-                </p>
+                <div class="product-category">Dessert</div>
+                <h5 class="card-title">Tartelette à la fraise</h5>
+                <p class="card-text">Tartelette aux fraises fraîches et nappage.</p>
               </div>
             </div>
           </div>
 
-          <!-- Produit 5 -->
-          <div class="col-lg-3 col-md-4 col-sm-6">
+          <!-- 5 -->
+          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
             <div class="card product-card h-100 shadow-sm border-0">
-              <img
-                th:src="@{/assets/img/chou_chantilly.jpg}"
-                class="card-img-top product-img"
-                alt="Chou chantilly"
-              />
+
+              <div class="img-wrapper"
+                th:style="|--img:url('@{/assets/img/patisseries/chou_chantilly.jpg}')|">
+                <img th:src="@{/assets/img/patisseries/chou_chantilly.jpg}" alt="Chou chantilly" />
+              </div>
 
               <div class="card-body text-center">
+                <div class="product-category">Choux</div>
                 <h5 class="card-title">Chou chantilly</h5>
-
-                <p class="card-text">Chou pâtissier recouvert de chantilly.</p>
+                <p class="card-text">Chou léger avec chantilly maison.</p>
               </div>
             </div>
           </div>
 
-          <!-- Produit 6 -->
-          <div class="col-lg-3 col-md-4 col-sm-6">
+          <!-- 6 -->
+          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
             <div class="card product-card h-100 shadow-sm border-0">
-              <img
-                th:src="@{/assets/img/chou_chocolat.jpg}"
-                class="card-img-top product-img"
-                alt="Chou au chocolat"
-              />
+
+              <div class="img-wrapper"
+                th:style="|--img:url('@{/assets/img/patisseries/chou_chocolat.jpg}')|">
+                <img th:src="@{/assets/img/patisseries/chou_chocolat.jpg}" alt="Chou chocolat" />
+              </div>
 
               <div class="card-body text-center">
-                <h5 class="card-title">Chou au chocolat</h5>
-
-                <p class="card-text">
-                  Chou pâtissier recouvert de chocolat fondant.
-                </p>
+                <div class="product-category">Choux</div>
+                <h5 class="card-title">Chou chocolat</h5>
+                <p class="card-text">Chou garni de chocolat fondant.</p>
               </div>
             </div>
           </div>
 
-          <!-- Produit 7 -->
-          <div class="col-lg-3 col-md-4 col-sm-6">
+          <!-- 7 -->
+          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
             <div class="card product-card h-100 shadow-sm border-0">
-              <img
-                th:src="@{/assets/img/eclair_framboise.jpg}"
-                class="card-img-top product-img"
-                alt="Éclair à la framboise"
-              />
+
+              <div class="img-wrapper"
+                th:style="|--img:url('@{/assets/img/patisseries/eclair_framboise.jpg}')|">
+                <img th:src="@{/assets/img/patisseries/eclair_framboise.jpg}" alt="Éclair" />
+              </div>
 
               <div class="card-body text-center">
-                <h5 class="card-title">Éclair à la framboise</h5>
-
-                <p class="card-text">
-                  Éclair garni de crème patissiere, chantilly et framboises.
-                </p>
+                <div class="product-category">Éclair</div>
+                <h5 class="card-title">Éclair framboise</h5>
+                <p class="card-text">Crème légère et framboises fraîches.</p>
               </div>
             </div>
           </div>
 
-          <!-- Produit 8 -->
-          <div class="col-lg-3 col-md-4 col-sm-6">
+          <!-- 8 -->
+          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
             <div class="card product-card h-100 shadow-sm border-0">
-              <img
-                th:src="@{/assets/img/eclairs.jpg}"
-                class="card-img-top product-img"
-                alt="Éclairs"
-              />
+
+              <div class="img-wrapper"
+                th:style="|--img:url('@{/assets/img/patisseries/eclairs.jpg}')|">
+                <img th:src="@{/assets/img/patisseries/eclairs.jpg}" alt="Éclairs" />
+              </div>
 
               <div class="card-body text-center">
-                <h5 class="card-title">Éclairs</h5>
-
-                <p class="card-text">
-                  Éclairs garnis de crème patissiere avec chocolat ou vanille.
-                </p>
+                <div class="product-category">Éclair</div>
+                <h5 class="card-title">Éclairs variés</h5>
+                <p class="card-text">Chocolat, vanille et autres parfums.</p>
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </section>
@@ -231,9 +301,7 @@
     <!-- FOOTER -->
     <div th:replace="fragments/footer :: footer"></div>
 
-    <!-- JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-
     <script th:src="@{/js/scripts.js}"></script>
   </body>
 </html>

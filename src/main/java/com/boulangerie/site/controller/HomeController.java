@@ -11,28 +11,19 @@ public class HomeController {
         return "index";
     }
 
-    @GetMapping("/produits")
-    public String produits() {
-        return "produits";
-    }
-
     @GetMapping("/pains")
     public String pains() {
         return "pains";
     }
 
-    @GetMapping("/viennoiseries")
-    public String viennoiseries() {
-        return "viennoiseries";
+    @GetMapping("/sucre")
+    public String sucre() {
+        return "sucre";
     }
 
-    @GetMapping("/patisseries")
-    public String patisseries() {
-        return "patisseries";
+    @GetMapping("/sale")
+    public String sale() {
+        return "sale";
     }
 
-    @GetMapping("/contact")
-    public String contact() {
-        return "contact";
-    }
 }

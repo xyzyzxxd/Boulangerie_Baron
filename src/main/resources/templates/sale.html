@@ -33,28 +33,107 @@
     <link th:href="@{/css/styles.css}" rel="stylesheet" />
 
     <style>
-      .product-card {
-        transition: transform 0.2s ease;
-      }
+      body {
+  background-color: #faf7f2;
+}
 
-      .product-card:hover {
-        transform: translateY(-5px);
-      }
+/* CONTAINER */
+.container.py-4 {
+  max-width: 1400px;
+}
 
-      .product-img {
-        height: 220px;
-        width: 100%;
-        object-fit: cover;
-      }
+/* =========================
+   TITRE
+========================= */
+.title-box {
+  background: white;
+  padding: 60px;
+  border-radius: 20px;
+  max-width: 900px;
+  margin: auto;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
 
-      .card-title {
-        font-weight: bold;
-        font-size: 1.2rem;
-      }
+.title-upper {
+  display: block;
+  color: #a66a3f;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
 
-      .card-text {
-        font-size: 0.95rem;
-      }
+.title-main {
+  font-size: 4rem;
+  font-weight: 800;
+  color: #3b2f2f;
+  margin: 15px 0;
+}
+
+.title-sub {
+  color: #666;
+  font-size: 1.1rem;
+  margin-bottom: 0;
+}
+
+/* =========================
+   CARDS
+========================= */
+.product-card {
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: 100%;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* IMAGE SANS ROGNAGE */
+.product-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* BODY */
+.card-body {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.card-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #3b2f2f;
+}
+
+.card-text {
+  font-size: 0.9rem;
+  color: #6b5b4f;
+  line-height: 1.4;
+}
+
+/* CATÉGORIE */
+.product-category {
+  color: #a66a3f;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+/* GRILLE */
+.row {
+  justify-content: center;
+  row-gap: 25px;
+}
     </style>
   </head>
 
@@ -83,7 +162,7 @@
           <div class="col-lg-3 col-md-4 col-sm-6">
             <div class="card product-card h-100 shadow-sm border-0">
               <img
-                th:src="@{/assets/img/fougasses.jpg}"
+                th:src="@{/assets/img/sale/fougasses.jpg}"
                 class="card-img-top product-img"
                 alt="Fougasse"
               />
@@ -102,7 +181,7 @@
           <div class="col-lg-3 col-md-4 col-sm-6">
             <div class="card product-card h-100 shadow-sm border-0">
               <img
-                th:src="@{/assets/img/pizzas.jpg}"
+                th:src="@{/assets/img/sale/pizzas.jpg}"
                 class="card-img-top product-img"
                 alt="Pizzas"
               />
@@ -121,7 +200,7 @@
           <div class="col-lg-3 col-md-4 col-sm-6">
             <div class="card product-card h-100 shadow-sm border-0">
               <img
-                th:src="@{/assets/img/fougasse_chorizo.jpg}"
+                th:src="@{/assets/img/sale/fougasse_chorizo.jpg}"
                 class="card-img-top product-img"
                 alt="Fougasse au chorizo"
               />
@@ -140,7 +219,7 @@
           <div class="col-lg-3 col-md-4 col-sm-6">
             <div class="card product-card h-100 shadow-sm border-0">
               <img
-                th:src="@{/assets/img/pizza_chevre.jpg}"
+                th:src="@{/assets/img/sale/pizza_chevre.jpg}"
                 class="card-img-top product-img"
                 alt="Pizza au chèvre"
               />

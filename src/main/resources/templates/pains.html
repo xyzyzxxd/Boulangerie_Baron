@@ -29,66 +29,110 @@
       rel="stylesheet"
     />
 
-    <!-- CSS -->
     <link th:href="@{/css/styles.css}" rel="stylesheet" />
 
     <style>
       body {
-        background-color: #faf7f2;
-      }
+  background-color: #faf7f2;
+}
 
-      .section-heading-lower {
-        font-weight: 700;
-        letter-spacing: 1px;
-      }
+/* CONTAINER */
+.container.py-4 {
+  max-width: 1400px;
+}
 
-      .product-card {
-        border-radius: 14px;
-        overflow: hidden;
-        transition: all 0.25s ease;
-        background: #fff;
-      }
+/* =========================
+   TITRE
+========================= */
+.title-box {
+  background: white;
+  padding: 60px;
+  border-radius: 20px;
+  max-width: 900px;
+  margin: auto;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
 
-      .product-card:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12) !important;
-      }
+.title-upper {
+  display: block;
+  color: #a66a3f;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
 
-      .product-img {
-        height: 200px;
-        width: 100%;
-        object-fit: cover;
-      }
-      .row {
-        justify-content: center;
-      }
+.title-main {
+  font-size: 4rem;
+  font-weight: 800;
+  color: #3b2f2f;
+  margin: 15px 0;
+}
 
-      .card-body {
-        padding: 1.2rem;
-      }
+.title-sub {
+  color: #666;
+  font-size: 1.1rem;
+  margin-bottom: 0;
+}
 
-      .card-title {
-        font-weight: 600;
-        font-size: 1.1rem;
-        color: #3b2f2f;
-      }
+/* =========================
+   CARDS
+========================= */
+.product-card {
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: 100%;
+}
 
-      .card-text {
-        font-size: 0.9rem;
-        color: #6b5b4f;
-        line-height: 1.4;
-      }
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
 
-      /* titre page plus propre */
-      .page-section h1 {
-        margin-top: 2rem;
-      }
+/* IMAGE SANS ROGNAGE */
+.product-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 
-      .section-heading-upper {
-        font-size: 0.9rem;
-        color: #a66a3f;
-        letter-spacing: 1px;
-      }
+/* BODY */
+.card-body {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.card-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #3b2f2f;
+}
+
+.card-text {
+  font-size: 0.9rem;
+  color: #6b5b4f;
+  line-height: 1.4;
+}
+
+/* CATÉGORIE */
+.product-category {
+  color: #a66a3f;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+/* GRILLE */
+.row {
+  justify-content: center;
+  row-gap: 25px;
+}
     </style>
   </head>
 
@@ -97,40 +141,14 @@
     <div th:replace="fragments/header :: header"></div>
 
     <!-- TITRE -->
-    <section class="page-section clearfix">
+    <section class="page-section py-5">
       <div class="container text-center">
-        <div
-          style="
-            display: inline-block;
-            background-color: #fff7ec;
-            padding: 50px 80px;
-            border-radius: 18px;
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
-            max-width: 90%;
-          "
-        >
-          <div
-            style="
-              font-size: 1.3rem;
-              letter-spacing: 3px;
-              color: #a66a3f;
-              text-transform: uppercase;
-              margin-bottom: 15px;
-            "
-          >
-            Boulangerie artisanale
-          </div>
-
-          <div
-            style="
-              font-size: 3.2rem;
-              font-weight: 800;
-              color: #3b2f2f;
-              line-height: 1.1;
-            "
-          >
-            Nos pains
-          </div>
+        <div class="title-box">
+          <span class="title-upper">Boulangerie artisanale</span>
+          <div class="title-main">Nos pains</div>
+          <p class="title-sub">
+            Découvrez notre sélection de pains fabriqués chaque jour avec des ingrédients de qualité.
+          </p>
         </div>
       </div>
     </section>
@@ -138,154 +156,104 @@
     <!-- PRODUITS -->
     <section class="page-section">
       <div class="container py-4">
-        <div class="row g-4">
+        <div class="row g-4 justify-content-center">
+
           <!-- Produit 1 -->
-          <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
             <div class="card product-card h-100 shadow-sm border-0">
-              <img
-                th:src="@{/assets/img/pains/tradition.jpg}"
-                class="card-img-top product-img"
-                alt="Pain de seigle"
-              />
-
+              <img th:src="@{/assets/img/pains/tradition.jpg}" class="card-img-top product-img" alt="Tradition" />
               <div class="card-body text-center">
-                <h5 class="card-title">Tradition
-                </h5>
-
+                <div class="product-category">Pain traditionnel</div>
+                <h5 class="card-title">Tradition</h5>
                 <p class="card-text">Pain cuit selon la méthode traditionnelle.</p>
               </div>
             </div>
           </div>
 
           <!-- Produit 2 -->
-          <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
             <div class="card product-card h-100 shadow-sm border-0">
-              <img
-                th:src="@{/assets/img/pains/pain_levain_seigle.jpg}"
-                class="card-img-top product-img"
-                alt="Villageois"
-              />
-
+              <img th:src="@{/assets/img/pains/pain_levain_seigle.jpg}" class="card-img-top product-img" alt="Villageois" />
               <div class="card-body text-center">
+                <div class="product-category">Pain au levain</div>
                 <h5 class="card-title">Villageois</h5>
-
-                <p class="card-text">
-                  Pain au levain de seigle, à la mie dense et au goût prononcé.
-                </p>
+                <p class="card-text">Pain au levain de seigle, à la mie dense et au goût prononcé.</p>
               </div>
             </div>
           </div>
 
           <!-- Produit 3 -->
-          <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
             <div class="card product-card h-100 shadow-sm border-0">
-              <img
-                th:src="@{/assets/img/pains/pain_cereales.jpg}"
-                class="card-img-top product-img"
-                alt="Pain céréales"
-              />
-
+              <img th:src="@{/assets/img/pains/pain_cereales.jpg}" class="card-img-top product-img" alt="Pain céréales" />
               <div class="card-body text-center">
+                <div class="product-category">Pain aux graines</div>
                 <h5 class="card-title">Pain céréales</h5>
-
-                <p class="card-text">
-                  Pain riche en graines et céréales, idéal pour les sandwichs.
-                </p>
+                <p class="card-text">Pain riche en graines et céréales, idéal pour les sandwichs.</p>
               </div>
             </div>
           </div>
 
           <!-- Produit 4 -->
-          <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
             <div class="card product-card h-100 shadow-sm border-0">
-              <img
-                th:src="@{/assets/img/pains/pain_noix.jpg}"
-                class="card-img-top product-img"
-                alt="Pain noix"
-              />
-
+              <img th:src="@{/assets/img/pains/pain_noix.jpg}" class="card-img-top product-img" alt="Pain noix" />
               <div class="card-body text-center">
-                <h5 class="card-title">Pain noix
-                </h5>
-
+                <div class="product-category">Pain gourmand</div>
+                <h5 class="card-title">Pain noix</h5>
                 <p class="card-text">Pain aux noix riche en saveurs.</p>
               </div>
             </div>
           </div>
 
           <!-- Produit 5 -->
-          <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
             <div class="card product-card h-100 shadow-sm border-0">
-              <img
-                th:src="@{/assets/img/pains/pain_comte.jpg}"
-                class="card-img-top product-img"
-                alt="Pain au Comte"
-              />
-
+              <img th:src="@{/assets/img/pains/pain_comte.jpg}" class="card-img-top product-img" alt="Pain au Comté" />
               <div class="card-body text-center">
-                <h5 class="card-title">Pain au Comte</h5>
-
-                <p class="card-text">
-                  Pain au fromage comté, parfait pour les apéritifs et sandwichs
-                  gourmands.
-                </p>
+                <div class="product-category">Pain fromager</div>
+                <h5 class="card-title">Pain au Comté</h5>
+                <p class="card-text">Parfait pour les apéritifs et sandwichs gourmands.</p>
               </div>
             </div>
           </div>
 
           <!-- Produit 6 -->
-          <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
             <div class="card product-card h-100 shadow-sm border-0">
-              <img
-                th:src="@{/assets/img/pains/pain_muesli.jpg}"
-                class="card-img-top product-img"
-                alt="Pain muesli"
-              />
-
+              <img th:src="@{/assets/img/pains/pain_muesli.jpg}" class="card-img-top product-img" alt="Pain muesli" />
               <div class="card-body text-center">
+                <div class="product-category">Petit déjeuner</div>
                 <h5 class="card-title">Pain muesli</h5>
-
-                <p class="card-text">
-                  Pain riche en fruits secs et graines, idéal pour le petit
-                  déjeuner.
-                </p>
+                <p class="card-text">Riche en fruits secs et graines, idéal le matin.</p>
               </div>
             </div>
           </div>
 
           <!-- Produit 7 -->
-          <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
             <div class="card product-card h-100 shadow-sm border-0">
-              <img
-                th:src="@{/assets/img/pains/pains4.jpg}"
-                class="card-img-top product-img"
-                alt="Divers pains"
-              />
-
+              <img th:src="@{/assets/img/pains/pains4.jpg}" class="card-img-top product-img" alt="Divers pains" />
               <div class="card-body text-center">
+                <div class="product-category">Assortiment</div>
                 <h5 class="card-title">Divers pains</h5>
-
-                <p class="card-text">Découvrez notre sélection de pains variés et délicieux.</p>
+                <p class="card-text">Découvrez notre sélection de pains variés.</p>
               </div>
             </div>
           </div>
 
           <!-- Produit 8 -->
-          <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
             <div class="card product-card h-100 shadow-sm border-0">
-              <img
-                th:src="@{/assets/img/pains/pains3.jpg}"
-                class="card-img-top product-img"
-                alt="Divers pains"
-              />
-
+              <img th:src="@{/assets/img/pains/pains3.jpg}" class="card-img-top product-img" alt="Divers pains" />
               <div class="card-body text-center">
-                <h5 class="card-title">Divers pains</h5>
-
-                <p class="card-text">Autres variétés de pains disponibles.</p>
+                <div class="product-category">Assortiment</div>
+                <h5 class="card-title">Autres pains</h5>
+                <p class="card-text">Autres variétés disponibles selon les saisons.</p>
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </section>
@@ -293,9 +261,7 @@
     <!-- FOOTER -->
     <div th:replace="fragments/footer :: footer"></div>
 
-    <!-- JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-
     <script th:src="@{/js/scripts.js}"></script>
   </body>
 </html>
